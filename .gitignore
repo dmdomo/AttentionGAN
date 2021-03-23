@@ -1,6 +1,7 @@
 *.py[cod]
 *.png
 checkpoints/
+.idea/
 
 # keep .gitignore
 !.gitignore
