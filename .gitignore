@@ -2,6 +2,7 @@
 *.png
 checkpoints/
 .idea/
+results/
 
 # keep .gitignore
 !.gitignore
