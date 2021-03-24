@@ -1,8 +1,10 @@
 *.py[cod]
 *.png
+*.pyc
 checkpoints/
 .idea/
 results/
 
 # keep .gitignore
 !.gitignore
+

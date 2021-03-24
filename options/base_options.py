@@ -20,9 +20,9 @@ class BaseOptions():
     def initialize(self, parser):
         """Define the common options that are used in both training and test."""
         # basic parameters
-        parser.add_argument('--dataroot', default='/home/tt/2TB/Datasets/CelebA/processed/img_align_celeba_processed/Black2Blond',
+        parser.add_argument('--dataroot', default='/home/tt/2TB/Datasets/CelebAMask-HQ/processed/CelebA-HQ-img_processed/Black2Blond',
                             help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
-        parser.add_argument('--name', type=str, default='Black2Blond-20210323',
+        parser.add_argument('--name', type=str, default='Black2Blond-20210324',
                             help='name of the experiment. It decides where to store samples and models')
         parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
