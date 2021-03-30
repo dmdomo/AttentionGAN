@@ -77,5 +77,5 @@ if __name__ == '__main__':
         model.update_learning_rate()                     # update learning rates at the end of every epoch.
 
         # stop training
-        if epoch == 200:
+        if epoch == 500:
             break

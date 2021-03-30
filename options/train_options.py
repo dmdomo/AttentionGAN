@@ -23,12 +23,12 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--save_latest_freq', type=int, default=10000, help='frequency of saving the latest results')
         parser.add_argument('--save_epoch_freq', type=int, default=2, help='frequency of saving checkpoints at the end of epochs')
         parser.add_argument('--save_by_iter', action='store_true', help='whether saves model by iteration')
-        parser.add_argument('--continue_train', default=False, help='continue training: load the latest model')
-        parser.add_argument('--epoch_count', type=int, default=1, help='the starting epoch count, we save the model by <epoch_count>, <epoch_count>+<save_latest_freq>, ...')
+        parser.add_argument('--continue_train', default=True, help='continue training: load the latest model')
+        parser.add_argument('--epoch_count', type=int, default=200, help='the starting epoch count, we save the model by <epoch_count>, <epoch_count>+<save_latest_freq>, ...')
         parser.add_argument('--phase', type=str, default='train', help='train, val, test, etc')
         # training parameters
-        parser.add_argument('--niter', type=int, default=100, help='# of iter at starting learning rate')
-        parser.add_argument('--niter_decay', type=int, default=100, help='# of iter to linearly decay learning rate to zero')
+        parser.add_argument('--niter', type=int, default=200, help='# of iter at starting learning rate')
+        parser.add_argument('--niter_decay', type=int, default=400, help='# of iter to linearly decay learning rate to zero')
         parser.add_argument('--beta1', type=float, default=0.5, help='momentum term of adam')
         parser.add_argument('--lr', type=float, default=0.00002, help='initial learning rate for adam')  # 0.0002
         parser.add_argument('--gan_mode', type=str, default='lsgan', help='the type of GAN objective. [vanilla| lsgan | wgangp]. vanilla GAN loss is the cross-entropy objective used in the original GAN paper.')
