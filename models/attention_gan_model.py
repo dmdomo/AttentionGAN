@@ -149,32 +149,11 @@ class AttentionGANModel(BaseModel):
     def backward_D_A(self):
         """Calculate GAN loss for discriminator D_A"""
         fake_B = self.fake_B_pool.query(self.fake_B)
-        # fake_B[:,:,:110,:] = 0
-        # fake_B = fake_B[:,:,110:,55:201]
-        # fake_B_numpy = fake_B.cpu().numpy()[0]
-        # fake_B_numpy = fake_B_numpy[:, 110:, :]
-        # fake_B_numpy = fake_B.cpu().numpy()[0]
-        # fake_B_numpy = fake_B_numpy.transpose(1, 2, 0)
-        # cv2.imshow('', fake_B_numpy)
-        # cv2.waitKey()
-
-
-        # real_B = self.real_B[:, :, 128:, :]
-        # real_B_numpy = real_B.cpu().numpy()[0]
-        # real_B_numpy = real_B_numpy.transpose(1, 2, 0)
-        # cv2.imshow('real', cv2.cvtColor(real_B_numpy, cv2.COLOR_BGR2RGB))
-        # cv2.waitKey()
-        # self.real_B
-        # self.real_B [:,:,:110,:] = 0
-
         self.loss_D_A = self.backward_D_basic(self.netD_A, self.real_B, fake_B)
 
     def backward_D_B(self):
         """Calculate GAN loss for discriminator D_B"""
         fake_A = self.fake_A_pool.query(self.fake_A)
-        # fake_A [:,:,:110,:] = 0
-
-        # self.real_A [:,:,:110,:] = 0
         self.loss_D_B = self.backward_D_basic(self.netD_B, self.real_A, fake_A)
 
     def backward_G(self):
